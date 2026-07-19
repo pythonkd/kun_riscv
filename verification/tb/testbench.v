@@ -2,7 +2,7 @@
  * @Author: pythonkd 1181878670@qq.com
  * @Date: 2026-07-12 16:09:51
  * @LastEditors: pythonkd 1181878670@qq.com
- * @LastEditTime: 2026-07-19 09:37:34
+ * @LastEditTime: 2026-07-19 12:01:49
  * @FilePath: /kun_riscv/verification/tb/testbench.v
  * @Description: 
  * 
@@ -100,7 +100,8 @@ initial begin
         inst_load(inst_name);
     end
     #(`SIM_PERIOD * 50);
-    $stop;
+    $fsdbDumpflush();  // 强制刷新波形缓存
+    $finish;  
 end
 
 initial begin

@@ -1,0 +1,10 @@
+verification/sim/csrc
+verification/sim/simv.daidir
+verification/sim/verdiLog
+verification/sim/*.log
+verification/sim/*.conf
+verification/sim/*.rc
+verification/sim/*.fsdb
+verification/sim/*.vcd
+verification/sim/simv
+verification/sim/*.key

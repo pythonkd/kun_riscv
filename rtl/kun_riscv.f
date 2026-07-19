@@ -1,0 +1,9 @@
+$ROOT_PATH/rtl/kun_riscv_defines.v
+$ROOT_PATH/rtl/core_top.v
+$ROOT_PATH/rtl/instruction_lm.v
+$ROOT_PATH/rtl/data_lm.v
+$ROOT_PATH/rtl/pc_reg.v
+$ROOT_PATH/rtl/pc_mux.v
+$ROOT_PATH/rtl/reg_file.v
+$ROOT_PATH/rtl/decode_ctrl.v
+$ROOT_PATH/rtl/alu.v

@@ -2,7 +2,7 @@
  * @Author: pythonkd 1181878670@qq.com
  * @Date: 2026-07-14 22:22:10
  * @LastEditors: pythonkd 1181878670@qq.com
- * @LastEditTime: 2026-07-18 23:14:54
+ * @LastEditTime: 2026-07-19 11:48:47
  * @FilePath: /kun_riscv/rtl/alu.v
  * @Description: 
  * 
@@ -58,7 +58,6 @@ module alu(
         end
         `ALU_TYPE_IMM_W_REG: begin
             alu_src1 = imm;
-            alu_src2 = `REG_WIDTH'b0;
             reg_we = 1'b1;
         end
         `ALU_TYPE_PC_IMM_W_REG: begin
@@ -82,10 +81,12 @@ module alu(
         `ALU_OP_SUB: alu_src = alu_src1 - alu_src2;
         `ALU_OP_XOR: alu_src = alu_src1 ^ alu_src2;
         `ALU_OP_OR: alu_src = alu_src1 | alu_src2;
+        `ALU_OP_AND: alu_src = alu_src1 & alu_src2;
         `ALU_OP_SLL: alu_src = alu_src1 << alu_src2;
         `ALU_OP_SRL: alu_src = alu_src1 >> alu_src2;
         `ALU_OP_SLT: alu_src = $signed(alu_src1) < $signed(alu_src2) ? `REG_WIDTH'b1 : `REG_WIDTH'b0;
         `ALU_OP_SLTU: alu_src = alu_src1 < alu_src2 ? `REG_WIDTH'b1 : `REG_WIDTH'b0;
+        `ALU_OP_LUI: alu_src = alu_src1;
         `ALU_OP_AUI: alu_src = alu_src1 + alu_src2;
         `ALU_OP_SRL_MSB: alu_src = $signed(alu_src1) >>> alu_src2;
         `ALU_OP_BEQ: jump_en = alu_src1 == alu_src2;

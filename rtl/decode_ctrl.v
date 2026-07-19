@@ -2,7 +2,7 @@
  * @Author: pythonkd 1181878670@qq.com
  * @Date: 2026-07-12 22:00:12
  * @LastEditors: pythonkd 1181878670@qq.com
- * @LastEditTime: 2026-07-18 21:29:09
+ * @LastEditTime: 2026-07-19 10:06:08
  * @FilePath: /kun_riscv/rtl/decode_ctrl.v
  * @Description: 
  * 
@@ -154,13 +154,13 @@ module decode(
                 alu_type = `ALU_TYPE_IMM_W_REG;
                 imm = {instruction[31:12], {12{1'b0}}};
                 reg_index = rd;
-                alu_op = `ALU_OP_ADD;
+                alu_op = `ALU_OP_LUI;
             end
             `INST_OPCODE_AUIPC_TYPE: begin
                 alu_type = `ALU_TYPE_PC_IMM_W_REG;
                 imm = {instruction[31:12], {12{1'b0}}};
                 reg_index = rd;
-                alu_op = `ALU_OP_ADD;
+                alu_op = `ALU_OP_AUI;
             end
             default: instruction_decode_err = 1;
         endcase
